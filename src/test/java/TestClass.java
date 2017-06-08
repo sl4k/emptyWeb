@@ -14,10 +14,10 @@ public class TestClass {
 
     @BeforeClass
     public void setSystemVar() {
-        System.setProperty("webdriver.gecko.driver", "E:\\work\\workspace\\emptyWeb\\src\\test\\resources\\geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", "E:\\work\\workspace\\emptyWeb\\src\\test\\resources\\chromedriver.exe");
-        System.setProperty("webdriver.opera.driver", "E:\\work\\workspace\\emptyWeb\\src\\test\\resources\\operadriver.exe");
-        System.setProperty("webdriver.ie.driver", "E:\\work\\workspace\\emptyWeb\\src\\test\\resources\\IEDriverServer.exe");
+        System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.opera.driver", "src\\test\\resources\\operadriver.exe");
+        System.setProperty("webdriver.ie.driver", "src\\test\\resources\\IEDriverServer.exe");
     }
 
     @Test()
