@@ -10,7 +10,7 @@ public class MainPage {
     @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]/a")
     private WebElement changeLanguage;
 
-    @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]/*[contains(text(), 'ru')]")
+    @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]//span")
     private WebElement getCurrentLang;
 
     public MainPage() {

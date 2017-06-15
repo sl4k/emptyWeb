@@ -7,23 +7,24 @@ public class MainPageBO {
     private MainPage mainPage = new MainPage();
 
 
-
-    public boolean selectUaLanguageAndCheck(){
-        mainPage.setUaLanguage();
+    public boolean selectUaLanguageAndCheck() {
+        if (mainPage.isUaLanguageSelected()) {
+            return mainPage.isUaLanguageSelected();
+        }
+        mainPage.changeLanguage();
         return mainPage.isUaLanguageSelected();
     }
 
-    public boolean selectRuLanguageAndCheck(){
-        mainPage.setRuLanguage();
+    public boolean selectRuLanguageAndCheck() {
+        if (mainPage.isRuLanguageSelected()) {
+            return mainPage.isRuLanguageSelected();
+        }
+        mainPage.changeLanguage();
         return mainPage.isRuLanguageSelected();
     }
 
-    public String getActiveLanguage(){
-        if(mainPage.isUaLanguageSelected()){
-            return "UA";
-        }else{
-            return "RU";
-        }
+    public String getActiveLanguage() {
+        return mainPage.getCurrentLanguage();
     }
 
 
