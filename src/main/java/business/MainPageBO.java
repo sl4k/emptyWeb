@@ -8,12 +8,12 @@ public class MainPageBO {
 
 
 
-    public boolean selectUaLanguage(){
+    public boolean selectUaLanguageAndCheck(){
         mainPage.setUaLanguage();
         return mainPage.isUaLanguageSelected();
     }
 
-    public boolean selectRuLanguage(){
+    public boolean selectRuLanguageAndCheck(){
         mainPage.setRuLanguage();
         return mainPage.isRuLanguageSelected();
     }

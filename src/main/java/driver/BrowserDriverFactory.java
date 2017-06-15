@@ -13,16 +13,16 @@ public class BrowserDriverFactory {
 
     public RemoteWebDriver getAppropriateDriver(String browserName){
         if (browserName != null) {
-            if (browserName.equals("FF")) {
+            if (browserName.equalsIgnoreCase("FF")) {
                 return getFireFoxDriver();
             }
-            if (browserName.equals("CHROME")) {
+            if (browserName.equalsIgnoreCase("chrome")) {
                 return getChromeDriver();
             }
-            if (browserName.equals("IE")) {
+            if (browserName.equalsIgnoreCase("IE")) {
                 return getInternetExplorerDriver();
             }
-            if (browserName.equals("opera")) {
+            if (browserName.equalsIgnoreCase("opera")) {
                 return getOperaDriver();
             }
         }

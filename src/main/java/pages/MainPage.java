@@ -7,31 +7,29 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]/*[contains(text(), 'ua')]")
-    private WebElement uaLanguage;
+    @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]/a")
+    private WebElement changeLanguage;
 
     @FindBy(xpath = "//div[contains(@class, 'lang-switcher-i')]/*[contains(text(), 'ru')]")
-    private WebElement ruLanguage;
+    private WebElement getCurrentLang;
 
     public MainPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    public void setUaLanguage(){
-        uaLanguage.click();
+    public void changeLanguage(){
+        changeLanguage.click();
+    }
+
+    public String getCurrentLanguage(){
+        return getCurrentLang.getText();
     }
 
     public boolean isUaLanguageSelected(){
-        return uaLanguage.isSelected();
-    }
-
-    public void setRuLanguage(){
-        ruLanguage.click();
+        return getCurrentLanguage().equalsIgnoreCase("ua");
     }
 
     public boolean isRuLanguageSelected(){
-        return ruLanguage.isSelected();
+        return getCurrentLanguage().equalsIgnoreCase("ru");
     }
-
-
 }

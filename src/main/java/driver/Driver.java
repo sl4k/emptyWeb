@@ -3,6 +3,9 @@ package driver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Driver {
+
+    private static RemoteWebDriver driver;
+
     private void setPath() {
         System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
@@ -11,7 +14,21 @@ public class Driver {
     }
 
     public static synchronized RemoteWebDriver getDriver() {
-        BrowserDriverFactory factory = new BrowserDriverFactory();
-        return factory.getAppropriateDriver("chrome");
+        if (driver == null) {
+            driver = initializeDriver();
+        }
+        return driver;
     }
+
+    public static RemoteWebDriver initializeDriver(){
+            BrowserDriverFactory factory = new BrowserDriverFactory();
+            return factory.getAppropriateDriver("chrome");
+    }
+
+    public static void quit(){
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
 }
