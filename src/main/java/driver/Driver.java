@@ -22,8 +22,13 @@ public class Driver {
     }
 
     public static RemoteWebDriver initializeDriver(){
+        if(Boolean.parseBoolean(Config.getProperty("use.grid"))){
+            BrowserGridDriverFactory gridFactory = new BrowserGridDriverFactory();
+            return gridFactory.getAppropriateDriver(Config.getProperty("browser"));
+        }else{
             BrowserDriverFactory factory = new BrowserDriverFactory();
             return factory.getAppropriateDriver(Config.getProperty("browser"));
+        }
     }
 
     public static void quit(){
