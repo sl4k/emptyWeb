@@ -1,5 +1,6 @@
 package driver;
 
+import common.Config;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Driver {
@@ -22,7 +23,7 @@ public class Driver {
 
     public static RemoteWebDriver initializeDriver(){
             BrowserDriverFactory factory = new BrowserDriverFactory();
-            return factory.getAppropriateDriver("chrome");
+            return factory.getAppropriateDriver(Config.getProperty("browser"));
     }
 
     public static void quit(){
