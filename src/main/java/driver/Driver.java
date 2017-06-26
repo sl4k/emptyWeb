@@ -71,7 +71,7 @@ public class Driver {
     public static synchronized RemoteWebDriver getDriver() {
 
         if (!initialized) {
-            for (int i = 0; i < new Integer(Config.getProperty("threadCount")).intValue(); i++) {
+            for (int i = 0; i < Integer.parseInt(Config.getProperty("threadCount")); i++) {
                 IDriverFactory diverFactory;
                 if(Boolean.parseBoolean(Config.getProperty("use.grid").toUpperCase())){
                     diverFactory = new BrowserGridDriverFactory();
