@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserGridDriverFactory {
+public class BrowserGridDriverFactory implements IDriverFactory{
 
     public RemoteWebDriver getAppropriateDriver(String browserName) {
         if (browserName != null) {

@@ -9,9 +9,9 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class BrowserDriverFactory {
+public class BrowserDriverFactory implements IDriverFactory{
 
-    public RemoteWebDriver getAppropriateDriver(String browserName){
+    public RemoteWebDriver getAppropriateDriver (String browserName){
         if (browserName != null) {
             if (browserName.equalsIgnoreCase("FF")) {
                 return getFireFoxDriver();

@@ -14,7 +14,7 @@ public class MainPage {
     private WebElement getCurrentLang;
 
     public MainPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getCurrentDriver(), this);
     }
 
     public void changeLanguage(){
